@@ -1,0 +1,31 @@
+<div *ngIf="car">
+  <div class="containeR">
+    <div class="formContainer">
+      <h2>Car ID: {{ car.id}} </h2>
+      <br>
+      <div class="form-row">
+        <div class="form-group col-md-12">
+          <label>Model</label>
+          <select [(ngModel)]="car.model.id"  class="form-control"  >
+            <option *ngFor="let model of models" [value]="model.id">{{model.name}}</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-12">
+          <label>Country</label>
+          <input [(ngModel)]="car.country" placeholder="Country" type="text" class="form-control">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-12">
+          <label>Registration</label>
+          <input [(ngModel)]="date" type="datetime-local" class="form-control">
+        </div>
+      </div>
+      <br>
+      <button type="submit" (click)="goBack()" class="btn btn-primary">Go back</button>
+      <button style="margin-left: 25px;" type="submit" (click)="save()" class="btn btn-primary">Save</button>
+    </div>
+  </div>
+</div>

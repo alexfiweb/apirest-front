@@ -1,1 +1,56 @@
-/* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.header {
+    background-image: url(assets/BMW-Banner.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 80%;
+    height: 250px;
+    margin: auto;
+}
+
+tr {
+    outline: none;
+    cursor: pointer;
+    text-transform: capitalize;
+}
+
+.delete {
+    border: none;
+    padding: 5px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: Arial;
+    background-color: #000000;
+    color: white;
+}
+
+.delete:hover {
+    background-color: #959595;
+    color: black;
+}
+
+.containeR {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container {
+    margin-top: 30px;
+}
+
+.formContainer {
+    width: 60%;
+}
+
+.formContainer input, .formContainer select {
+    text-transform: capitalize;
+}

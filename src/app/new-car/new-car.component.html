@@ -1,0 +1,41 @@
+  <div class="containeR">
+    <div class="formContainer">
+      <h2>New Car</h2>
+      <br>
+      <div class="form-row">
+        <div class="form-group col-md-12">
+          <label>Brand</label>
+          <select (change)="getModelsByBrand(brandId.value)" #brandId class="form-control"  >
+            <!-- <option selected disabled> - Choose - </option> -->
+            <!-- <option value=0 >Any brand</option> -->
+            <option *ngFor="let brand of brands" [value]="brand.id">{{brand.name}}</option>
+          </select>
+        </div>
+      </div>
+      <!-- <div *ngIf="models"> -->
+      <div class="form-row">
+        <div class="form-group col-md-12">
+          <label>Model</label>
+          <select (change)="console(modelId.value)" #modelId class="form-control"  >
+            <option *ngFor="let model of models" [value]="model.id+','+model.name">{{model.name}}</option>
+          </select>
+        </div>
+      </div>
+    <!-- </div> -->
+      <div class="form-row">
+        <div class="form-group col-md-12">
+          <label>Country</label>
+          <input #country placeholder="Country" type="text" class="form-control">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-12">
+          <label>Registration</label>
+          <input #registration type="datetime-local" class="form-control">
+        </div>
+      </div>
+      <br>
+      <button type="submit" (click)="goBack()" class="btn btn-primary">Go back</button>
+      <button style="margin-left: 25px;" type="submit" (click)="saveCar(modelId.value, country.value, registration.value, brandId.value)" class="btn btn-primary">Save</button>
+    </div>
+  </div>
